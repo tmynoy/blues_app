@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ChelseaApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="header__bar row">
+        <div class="logo_name">
+          <%= image_tag 'logo.png', :size => '50x50' %>
+          <h1 class="grid-6"><a href="/">CHELSEA F.C app</a></h1>
+        </div>
+        <%# <% if user_signed_in? %>
+          <div class="user_nav grid-6">
+            <ul class="user__info">
+              <li>
+                <%= link_to "My Page", "#", class:"user_log" %>
+                <%= link_to "Log Out", '#', method: :delete, class:"user_log" %>
+              </li>
+            </ul>
+          </div>
+        <%# <% else %>
+          <%# <div class="grid-6">
+            <%= link_to "ログイン", '#', class: "post" %>
+            <%# <%= link_to "新規登録", '#', class: "post" %>
+          <%# </div> %>
+        <%# <% end %>
+      </div>
+    </header>
+    <%= yield %>
+    <footer>
+      <p>
+        Copyright Chelsea_app 2020.
+      </p>
+    </footer>
+  </body>
+</html>
