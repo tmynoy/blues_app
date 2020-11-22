@@ -1,0 +1,51 @@
+<div class="members_menu">
+  <div class="members_title">
+    <h4>MEMBERS</h4>
+    <h6>選手名クリックで詳細ページへ</h6>
+  </div>
+  <div class="all_members">
+    <div class="position_info">
+      <a>GK</a>
+      <div class="position_member">
+        <% @gk_members.each do |gk| %>
+          <div class="member_link">
+            <%= link_to gk.name, member_path(gk.id), class:"member_name" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="position_info">
+      <a>DF</a>
+      <div class="position_member">
+        <% @df_members.each do |df| %>
+          <div class="member_link">
+            <%= link_to df.name, member_path(df.id), class:"member_name" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="position_info">
+      <a>MF</a>
+      <div class="position_member">
+        <% @mf_members.each do |mf| %>
+          <div class="member_link">
+            <%= link_to mf.name, member_path(mf.id), class:"member_name" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="position_info">
+      <a>FW</a>
+      <div class="position_member">
+        <% @fw_members.each do |fw| %>
+          <div class="member_link">
+            <%= link_to fw.name, member_path(fw.id), class:"member_name" %>
+          </div>
+        <% end %>
+        </div>
+    </div>
+  </div>
+</div>

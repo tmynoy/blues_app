@@ -9,41 +9,45 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP" rel="stylesheet">
   </head>
 
   <body>
-    <header class="header">
-      <div class="header__bar row">
-        <div class="logo_name">
-          <%= image_tag 'logo.png', :size => '50x50' %>
-          <h1 class="grid-6"><a href="/">CHELSEA F.C app</a></h1>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__bar row">
+          <div class="logo_name">
+            <%= image_tag 'logo.png', :size => '50x50' %>
+            <h1 class="grid-6"><a href="/">CHELSEA F.C app</a></h1>
+          </div>
+          <% if user_signed_in? %>
+            <div class="user_nav grid-6">
+              <ul class="user__info">
+                <li>
+                  <a><%= "Welcome!!" %></a>
+                  <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"user_log" %>
+                </li>
+              </ul>
+            </div>
+          <% else %>
+            <div class="user_nav grid-6">
+              <ul class="user__info">
+                <li>
+                  <%= link_to "Log In", new_user_session_path, class:"user_log" %>
+                  <%= link_to "Sign In", new_user_registration_path, class:"user_log" %>
+                </li>
+              </ul>
+            </div>
+          <% end %>
         </div>
-        <% if user_signed_in? %>
-          <div class="user_nav grid-6">
-            <ul class="user__info">
-              <li>
-                <a><%= "Welcome!!" %></a>
-                <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"user_log" %>
-              </li>
-            </ul>
-          </div>
-        <% else %>
-          <div class="user_nav grid-6">
-            <ul class="user__info">
-              <li>
-                <%= link_to "Log In", new_user_session_path, class:"user_log" %>
-                <%= link_to "Sign In", new_user_registration_path, class:"user_log" %>
-              </li>
-            </ul>
-          </div>
-        <% end %>
-      </div>
-    </header>
-    <%= yield %>
-    <footer>
-      <p>
-        Copyright Chelsea_app 2020.
-      </p>
-    </footer>
+      </header>
+      <%= yield %>
+      <footer>
+        <p>
+          Copyright Chelsea_app 2020.
+        </p>
+      </footer>
+    </div>
   </body>
 </html>
