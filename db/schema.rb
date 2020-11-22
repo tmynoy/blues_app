@@ -10,7 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_19_061212) do
+ActiveRecord::Schema.define(version: 2020_11_20_061408) do
+
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "content", null: false
+    t.bigint "member_id"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["member_id"], name: "index_comments_on_member_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "member_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "member_id"
+    t.bigint "comment_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["comment_id"], name: "index_member_comments_on_comment_id"
+    t.index ["member_id"], name: "index_member_comments_on_member_id"
+  end
+
+  create_table "members", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "nation", null: false
+    t.date "ord", null: false
+    t.string "position", null: false
+    t.string "zone", null: false
+    t.string "height", null: false
+    t.string "weight", null: false
+    t.string "foot", null: false
+    t.string "backnumber", null: false
+    t.string "image", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
@@ -25,4 +59,8 @@ ActiveRecord::Schema.define(version: 2020_11_19_061212) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "members"
+  add_foreign_key "comments", "users"
+  add_foreign_key "member_comments", "comments"
+  add_foreign_key "member_comments", "members"
 end

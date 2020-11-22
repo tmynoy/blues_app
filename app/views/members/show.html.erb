@@ -1,0 +1,94 @@
+<div class="member__menu">
+  <div class="member__info">
+    <div class="member_image">
+      <%= image_tag @member.image, :size => '396x600' %>
+    </div>
+    <div class="member_details">
+      <div class="details_main">
+        <%= @member.name %>
+      </div>
+      <div class="details">
+        <div class="details_list">
+          <div class="details_name">
+            生年月日 : 
+          </div>
+          <div class="details_dif">
+            <%= @member.ord %>
+          </div>
+        </div>
+        <div class="details_list">
+          <div class="details_name">
+            年齢 : 
+          </div>
+          <div class="details_dif">
+            <%= "#{@age} 歳" %>
+          </div>
+        </div>
+        <div class="details_list">
+          <div class="details_name">
+            国籍 : 
+          </div>
+          <div class="details_dif">
+            <%= @member.nation %>
+          </div>
+        </div>
+        <div class="details_list">
+          <div class="details_name">
+            ポジション : 
+          </div>
+          <div class="details_dif">
+            <%= @member.position %>
+          </div>
+        </div>
+        <div class="details_list">
+          <div class="details_name">
+            身長 : 
+          </div>
+          <div class="details_dif">
+            <%= @member.height %>
+          </div>
+        </div>
+        <div class="details_list">
+          <div class="details_name">
+            体重 : 
+          </div>
+          <div class="details_dif">
+          <%= @member.weight %>
+          </div>
+        </div>
+        <div class="details_list">
+          <div class="details_name">
+            利き足 : 
+          </div>
+          <div class="details_dif">
+            <%= @member.foot %>
+          </div>
+        </div>
+        <div class="details_list">
+          <div class="details_name">
+            背番号 : 
+          </div>
+          <div class="details_dif">
+            <%= @member.backnumber %>
+          </div>
+        </div>
+      </div>
+      <div class="back_page">
+        <%= link_to "メンバー一覧ページに戻る", members_path, class:"back_page_link" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="evaluation_main">
+    <div class="evaluation_list">
+      ユーザー評価
+    </div>
+  </div>
+
+  <div class="comment_main">
+    <div class="comment_list">
+      コメント
+    </div>
+  </div>
+
+</div>

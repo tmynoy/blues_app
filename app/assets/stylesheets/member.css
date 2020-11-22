@@ -1,0 +1,100 @@
+.all_members {
+  padding: 20px 150px;
+}
+
+.member_name {
+  text-decoration: none;
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+.position_member {
+  margin-bottom: 20px;
+}
+
+.member_link {
+  background-color: white;
+  padding: 10px 5px;
+  margin-bottom: 10px;
+}
+
+.position_info > a  {
+  font-size: 30px;
+  color: white;
+  border: 1px solid;
+  background-color: blue;
+  padding: 5px 20px;
+}
+
+.members_title > h4{
+  margin-top: 40px;
+  text-align: center;
+  font-size: 50px;
+  font-family: 'Sawarabi Mincho', sans-serif;
+  margin-bottom: 10px;
+}
+
+.members_title > h6 {
+  font-size: 15px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+
+
+
+
+.member__info {
+  display: flex;
+  padding: 50px 100px 10px;
+}
+
+.member_details {
+  padding-left: 10px;
+  padding-top: 30px;
+  height: 570px;
+  background-color: white;
+  width: 100%;
+}
+
+.details_main {
+  font-size: 35px;
+  background-color: blue;
+  color: white;
+  font-family: 'Noto Serif JP', sans-serif;
+}
+
+.details {
+  padding-left: 30px;
+  padding-top: 50px;
+}
+
+.details_list {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.details_name {
+  font-size: 20px;
+  width: 130px;
+  text-align: right;
+}
+
+.details_dif {
+  font-size: 20px;
+  padding-left: 30px;
+}
+
+.back_page {
+  text-align: right;
+  padding-right: 40px;
+  padding-top: 80px;
+}
+
+.evaluation_main, .comment_main {
+  padding: 5px 100px;
+}
+
+.evaluation_list, .comment_list {
+  background-color: white;
+}
