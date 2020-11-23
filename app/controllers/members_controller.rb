@@ -9,6 +9,8 @@ class MembersController < ApplicationController
   def show
     @member = Member.find(params[:id])
     age_sum
+    @comment = Comment.new
+    @comments = @member.comments.includes(:user).order(id: "DESC")
   end
 
   private
