@@ -98,3 +98,48 @@
 .evaluation_list, .comment_list {
   background-color: white;
 }
+
+
+
+.comment_list {
+  padding: 30px 50px;
+  margin-bottom: 40px;
+  margin-top: 30px;
+}
+
+.form-control {
+  width: 300px;
+}
+
+.send_control {
+  width: 60px;
+  height: 30px;
+}
+
+.comments > h4 {
+  font-size: 20px;
+}
+
+.comment_in {
+  padding-left: 20px;
+  text-decoration: none;
+}
+
+.comment_content > a {
+  color: gray;
+  margin-left: 10px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.comment_content {
+  margin-left: 20px;
+}
+
+.comment_all {
+  display: flex;
+  margin-bottom: 5px;
+  position: relative;
+
+}

@@ -87,7 +87,32 @@
 
   <div class="comment_main">
     <div class="comment_list">
-      コメント
+      <div class="container">
+        <% if user_signed_in? %>
+          <%= form_with(model: [@member, @comment], local: true) do |form| %>
+            <%= form.text_area :content, placeholder: "コメントする", rows: "2", class: "form-control" %>
+            <%= form.submit "SEND", class: "send_control" %>
+          <% end %>
+        <% else %>
+          <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+        <% end %>
+        <div class="comments">
+          <h4>＜コメント一覧＞</h4>
+          <% if @comments %>
+            <% @comments.each do |comment| %>
+              <div class="comment_all">
+                <div class="comment_info">
+                  <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}", class: "comment_in" %></strong>
+                </div>
+                <div class="comment_content">
+                  <%= ":　#{comment.content}" %>
+                  <a><%= "#{comment.created_at.to_s(:datetime_jp) }" %></a>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 
