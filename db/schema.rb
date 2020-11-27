@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_20_054441) do
+ActiveRecord::Schema.define(version: 2020_11_23_084050) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "content", null: false
@@ -20,6 +20,22 @@ ActiveRecord::Schema.define(version: 2020_11_20_054441) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["member_id"], name: "index_comments_on_member_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "evaluations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "total_id", null: false
+    t.integer "offence_id", null: false
+    t.integer "deffence_id", null: false
+    t.integer "pass_id", null: false
+    t.integer "dribble_id", null: false
+    t.integer "physical_id", null: false
+    t.integer "pace_id", null: false
+    t.bigint "member_id"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["member_id"], name: "index_evaluations_on_member_id"
+    t.index ["user_id"], name: "index_evaluations_on_user_id"
   end
 
   create_table "members", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -52,4 +68,6 @@ ActiveRecord::Schema.define(version: 2020_11_20_054441) do
 
   add_foreign_key "comments", "members"
   add_foreign_key "comments", "users"
+  add_foreign_key "evaluations", "members"
+  add_foreign_key "evaluations", "users"
 end

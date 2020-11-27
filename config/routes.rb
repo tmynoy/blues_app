@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root to: 'teams#index'
   resources :members, only: [:index, :show] do
     resources :comments, only: [:create]
+    resources :evaluations, only: [:create]
   end
 end

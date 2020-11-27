@@ -81,21 +81,277 @@
 
   <div class="evaluation_main">
     <div class="evaluation_list">
-      ユーザー評価
+      <div class="eva_title">
+        <a>ユーザー評価</a>
+      </div>
+      <div class="eva_sum-box">
+        <% if @eval_find.exists? %>
+          <div class="hidden_eva">
+            <div class="total_evaluation">
+              <div class="eva_tho">
+                <a id="js_total"><%= @total_average %></a>
+              </div>
+            </div>
+            <div class="over_list">
+              <div class="offence_evaluation">
+                <a id="js_offence"><%= @offence_average %></a>
+              </div>
+              <div class="deffence_evaluation">
+                <a id="js_deffence"><%= @deffence_average %></a>
+              </div>
+              <div class="pass_evaluation">
+                <a id="js_pass"><%= @pass_average %></a>
+              </div>
+            </div>
+            <div class="under_list">
+              <div class="dribble_evaluation">
+                <a id="js_dribble"><%= @dribble_average %></a>
+              </div>
+              <div class="physical_evaluation">
+                <a id="js_physical"><%= @physical_average %></a>
+              </div>
+              <div class="pace_evaluation">
+                <a id="js_pace"><%= @pace_average %></a>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div>
+        <% if @eval_find.exists? && @eval_user.exists? %>
+          <div class="evaluation-box1">
+            <div class="your_eva">
+              あなたの評価
+            </div>
+            <div class="total_evaluation">
+              <div class="topi">
+                <a>総評 : </a>
+              </div>
+              <div class="your_total">
+                <a id="jsu_total"><%= @eval_cur.total_id %></a>
+              </div>
+              <div class="topi">
+                <a> / 5 </a>
+              </div>
+            </div>
+            <div class="over_list">
+              <div class="offence_evaluation">
+                <div class="all_topis">
+                  <div class="topis">
+                    <a>オフェンス : </a>
+                  </div>
+                  <div class="your_point">
+                    <a id="jsu_offence"><%= @eval_cur.offence_id %></a>
+                  </div>
+                    <div class="topis">
+                    <a> / 5 </a>
+                  </div>
+                </div>
+              </div>
+              <div class="deffence_evaluation">
+                <div class="all_topis">
+                  <div class="topis">
+                    <a>ディフェンス : </a>
+                  </div>
+                  <div class="your_point">
+                    <a id="jsu_deffence"><%= @eval_cur.deffence_id %></a>
+                  </div>
+                    <div class="topis">
+                    <a> / 5 </a>
+                  </div>
+                </div>
+              </div>
+              <div class="pass_evaluation">
+                <div class="all_topis">
+                  <div class="topis">
+                    <a>パス : </a>
+                  </div>
+                  <div class="your_point">
+                    <a id="jsu_pass"><%= @eval_cur.pass_id %></a>
+                  </div>
+                    <div class="topis">
+                    <a> / 5 </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="under_list">
+              <div class="dribble_evaluation">
+                <div class="all_topis">
+                  <div class="topis">
+                    <a>ドリブル : </a>
+                  </div>
+                  <div class="your_point">
+                    <a id="jsu_dribble"><%= @eval_cur.dribble_id %></a>
+                  </div>
+                    <div class="topis">
+                    <a> / 5 </a>
+                  </div>
+                </div>
+              </div>
+              <div class="physical_evaluation">
+                <div class="all_topis">
+                  <div class="topis">
+                    <a>フィジカル : </a>
+                  </div>
+                  <div class="your_point">
+                    <a id="jsu_physical"><%= @eval_cur.physical_id %></a>
+                  </div>
+                    <div class="topis">
+                    <a> / 5 </a>
+                  </div>
+                </div>
+              </div>
+              <div class="pace_evaluation">
+                <div class="all_topis">
+                  <div class="topis">
+                    <a>スピード : </a>
+                  </div>
+                  <div class="your_point">
+                    <a id="jsu_pace"><%= @eval_cur.pace_id %></a>
+                  </div>
+                    <div class="topis">
+                    <a> / 5 </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% else %>
+          <div class="eva_all_f">
+            <%= form_with model: @evaluation, url: member_evaluations_path(@member.id), local: true, class: "eva_form" do |f| %>
+              <div class="evaluation-box">
+                <div class="top_eva">
+                  <div class="total_evaluation">
+                    <a>総評: </a>
+                    <%= f.collection_select(:total_id, Total.all, :id, :name, {}, {class:"evaluation-select"}) %>
+                    <a>/ 5</a>
+                  </div>
+                  <div class="setsumei">
+                    <a>【評価で全ユーザーの平均値が見れます】</a>
+                  </div>
+                </div>
+                <div class="over_list">
+                  <div class="offence_evaluation">
+                    <a>オフェンス: </a>
+                    <%= f.collection_select(:offence_id, Offence.all, :id, :name, {}, {class:"evaluation-select"}) %>
+                    <a>/ 5</a>
+                  </div>
+                  <div class="deffence_evaluation">
+                    <a>ディフェンス: </a>
+                    <%= f.collection_select(:deffence_id, Deffence.all, :id, :name, {}, {class:"evaluation-select"}) %>
+                    <a>/ 5</a>
+                  </div>
+                  <div class="pass_evaluation">
+                    <a>パス: </a>
+                    <%= f.collection_select(:pass_id, Pass.all, :id, :name, {}, {class:"evaluation-select"}) %>
+                    <a>/ 5</a>
+                  </div>
+                </div>
+                <div class="under_list">
+                  <div class="dribble_evaluation">
+                    <a>ドリブル: </a>
+                    <%= f.collection_select(:dribble_id, Dribble.all, :id, :name, {}, {class:"evaluation-select"}) %>
+                    <a>/ 5</a>
+                  </div>
+                  <div class="physical_evaluation">
+                    <a>フィジカル: </a>
+                    <%= f.collection_select(:physical_id, Physical.all, :id, :name, {}, {class:"evaluation-select"}) %>
+                    <a>/ 5</a>
+                  </div>
+                  <div class="pace_evaluation">
+                    <a>スピード: </a>
+                    <%= f.collection_select(:pace_id, Pace.all, :id, :name, {}, {class:"evaluation-select"}) %>
+                    <a>/ 5</a>
+                  </div>
+                </div>
+                <div class="btn_evaluation">
+                  <%= f.submit "評価する" ,class:"evaluation_btn" %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <% if @eval_find.exists? && @eval_user.exists? %>
+        <div class="graph">
+          <canvas id="myBarChart"></canvas>
+          <script>
+            const total = parseFloat(document.getElementById("js_total").textContent)
+            const offence = parseFloat(document.getElementById("js_offence").textContent)
+            const deffence = parseFloat(document.getElementById("js_deffence").textContent)
+            const pass = parseFloat(document.getElementById("js_pass").textContent)
+            const dribble = parseFloat(document.getElementById("js_dribble").textContent)
+            const physical = parseFloat(document.getElementById("js_physical").textContent)
+            const pace = parseFloat(document.getElementById("js_pace").textContent)
+
+            const total_u = parseFloat(document.getElementById("jsu_total").textContent)
+            const offence_u = parseFloat(document.getElementById("jsu_offence").textContent)
+            const deffence_u = parseFloat(document.getElementById("jsu_deffence").textContent)
+            const pass_u = parseFloat(document.getElementById("jsu_pass").textContent)
+            const dribble_u = parseFloat(document.getElementById("jsu_dribble").textContent)
+            const physical_u = parseFloat(document.getElementById("jsu_physical").textContent)
+            const pace_u = parseFloat(document.getElementById("jsu_pace").textContent)
+            
+            var ctx = document.getElementById("myBarChart");
+            var myBarChart = new Chart(ctx, {
+              type: 'bar',
+              data: {
+                labels: ['総評', 'オフェンス', 'ディフェンス', 'パス', 'ドリブル', 'フィジカル', 'スピード'],
+                datasets: [
+                  {
+                    label: '平均',
+                    data: [total, offence, deffence, pass, dribble, physical, pace],
+                    backgroundColor: "rgba(255,0,0,0.8)"
+                  },{
+                    label: 'yours',
+                    data: [total_u, offence_u, deffence_u, pass_u, dribble_u, physical_u, pace_u],
+                    backgroundColor: "rgba(0,0,255,0.8)"
+                  }
+                ]
+              },
+              options: {
+                title: {
+                  display: true,
+                  text: 'User評価（5段階）',
+                  fontSize: 20,
+                  fontColor: "rgba(0,0,0)"
+                },
+                scales: {
+                  yAxes: [{
+                    ticks: {
+                      suggestedMax: 5,
+                      suggestedMin: 0,
+                      stepSize: 1,
+                      callback: function(value, index, values){
+                        return  value
+                      }
+                    }
+                  }]
+                },
+              }
+            });
+          </script>
+        </div>
+      <% end %>
     </div>
   </div>
 
   <div class="comment_main">
     <div class="comment_list">
       <div class="container">
-        <% if user_signed_in? %>
-          <%= form_with(model: [@member, @comment], local: true) do |form| %>
-            <%= form.text_area :content, placeholder: "コメントする", rows: "2", class: "form-control" %>
-            <%= form.submit "SEND", class: "send_control" %>
-          <% end %>
-        <% else %>
-          <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
-        <% end %>
+        <div class="comment_zone">
+          <div class="comment_area">
+            <% if user_signed_in? %>
+              <%= form_with(model: [@member, @comment], local: true) do |form| %>
+                <%= form.text_area :content, placeholder: "コメントする", rows: "2", class: "form-control" %>
+                <%= form.submit "SEND", class: "send_control" %>
+              <% end %>
+            <% else %>
+              <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+            <% end %>
+          </div>
+        </div>
         <div class="comments">
           <h4>＜コメント一覧＞</h4>
           <% if @comments %>
@@ -105,8 +361,12 @@
                   <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}", class: "comment_in" %></strong>
                 </div>
                 <div class="comment_content">
-                  <%= ":　#{comment.content}" %>
-                  <a><%= "#{comment.created_at.to_s(:datetime_jp) }" %></a>
+                  <div class="user_com">
+                    <%= ":　#{comment.content}" %>
+                  </div>
+                  <div class="comment_date">
+                    <a><%= "#{comment.created_at.to_s(:datetime_jp) }" %></a>
+                  </div>
                 </div>
               </div>
             <% end %>
@@ -115,5 +375,4 @@
       </div>
     </div>
   </div>
-
 </div>
