@@ -9,12 +9,12 @@ RSpec.describe User, type: :model do
     it "nicknameとemail、passwordとpassword_confirmationが存在すれば登録できること" do
       expect(@user).to be_valid
     end
-    it "nameが空では登録できないこと" do
+    it "nicknameが空では登録できないこと" do
       @user.nickname = nil
       @user.valid?
       expect(@user.errors.full_messages).to include("Nickname can't be blank")
     end
-    it "nameが6文字以上では登録できないこと" do
+    it "nicknameが6文字以上では登録できないこと" do
       @user.nickname = "あああああああ"
       @user.valid?
       expect(@user.errors.full_messages).to include("Nickname is too long (maximum is 6 characters)")
