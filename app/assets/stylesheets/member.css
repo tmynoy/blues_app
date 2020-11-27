@@ -37,11 +37,8 @@
 .members_title > h6 {
   font-size: 15px;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 1p;
 }
-
-
-
 
 
 .member__info {
@@ -100,7 +97,6 @@
 }
 
 
-
 .comment_list {
   padding: 30px 50px;
   margin-bottom: 40px;
@@ -125,21 +121,205 @@
   text-decoration: none;
 }
 
-.comment_content > a {
+.comment_date > a {
   color: gray;
   margin-left: 10px;
-  position: absolute;
-  right: 0;
-  bottom: 0;
 }
 
 .comment_content {
   margin-left: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .comment_all {
   display: flex;
   margin-bottom: 5px;
   position: relative;
+}
 
+.over_list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.under_list {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.offence_evaluation, .deffence_evaluation, .pass_evaluation, .dribble_evaluation, .physical_evaluation, .pace_evaluation {
+  width: 220px;
+  font-size: 30px;
+  border-bottom: 4px solid blue;
+}
+
+.btn_evaluation {
+  display: flex;
+  justify-content: center;
+}
+
+.evaluation_btn {
+  width: 250px;
+  height: 40px;
+  background-color: blue;
+  color: white;
+}
+
+.top_eva {
+  display: flex;
+  justify-content: space-between;
+}
+
+.evaluation_list {
+  padding: 40px 30px;
+  position: relative;
+}
+
+.evaluation-box {
+  margin-top: 70px;
+}
+
+.setsumei {
+  margin-right: 100px;
+  font-size: 20px;
+}
+
+.your_eva {
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.eva_title {
+  position: absolute;
+  left: 0;
+  top: 20px;
+  background-color: blue;
+  width: 40%;
+  height: 50px;
+  text-align: right;
+  justify-content: center;
+  padding-right: 10px;
+}
+
+.eva_title > a {
+  color: white;
+  font-size: 35px;
+  font-family: 'Noto Serif JP', sans-serif;
+}
+
+.eva_sum-box {
+  position: absolute;
+  top: 80px;
+  width: 93%;
+}
+
+.hidden_eva {
+  display: none;
+}
+
+.total_evaluation {
+  border-bottom: 4px solid blue;
+  width: 200px;
+  text-align: center;
+  margin-left: 70px;
+}
+
+.total_evaluation  > a{
+  font-size: 30px;
+}
+
+.evaluation-select {
+  font-size: 20px;
+}
+
+
+.eva_tho {
+  margin-left: 100px;
+}
+
+.eva_tho > a {
+  font-size: 30px;
+}
+
+.total__a {
+  font-size: 40px;
+}
+
+.eva_sec {
+  font-size: 30px;
+  border: 1px solid;
+}
+
+.over_list {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.offence_evaluation > a, .deffence_evaluation > a,
+.pass_evaluation > a, .dribble_evaluation > a,
+.physical_evaluation > a, .pace_evaluation > a {
+  font-size: 20px;
+}
+
+.graph {
+  margin-top: 80px;
+}
+
+.topi {
+  position: relative;
+  width: 100px;
+}
+
+.topi > a {
+  font-size: 30px;
+  position: absolute;
+  bottom: 7px;
+}
+
+.your_total {
+  width: 70px;
+  height: 70px;
+  position: relative;
+  text-align: center;
+}
+
+.your_total > a {
+  font-size: 45px;
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 0;
+  font-weight: bold;
+  color: red;
+}
+
+.all_topis {
+  display: flex;
+
+}
+
+.your_point > a {
+  font-size: 35px;
+  font-weight: bold;
+  color: red;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.topis > a {
+  font-size: 20px;
+  position: absolute;
+  bottom: 7px;
+}
+
+.topis {
+  position: relative;
+  width: 130px;
+}
+
+.evaluation-box1 {
+  display: none;
 }
