@@ -344,7 +344,7 @@
           <div class="comment_area">
             <% if user_signed_in? %>
               <%= form_with(model: [@member, @comment], local: true) do |form| %>
-                <%= form.text_area :content, placeholder: "コメントする", rows: "2", class: "form-control" %>
+                <%= form.text_area :content, placeholder: "コメントする（20文字以内）", rows: "2", class: "form-control" %>
                 <%= form.submit "SEND", class: "send_control" %>
               <% end %>
             <% else %>

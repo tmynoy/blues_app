@@ -1,0 +1,22 @@
+<div class="room_title">
+  チャットルームで盛り上がろう！！
+</div>
+
+<% num = 0 %>
+<% @rooms.each do |room| %>
+  <% if room.match_day > Date.today.ago(1.days) %>
+    <%= link_to room, class: "room_link" do %>
+      <div class="room_list">
+        第<%= room.id %>節
+        <%= room.match_day.strftime('%m/%d') %>
+        (<%= ["日", "月", "火", "水", "木", "金", "土"][room.match_day.wday] %>)
+        <%= room.match_time.in_time_zone("UTC").strftime('%H:%M') %>〜 <br>
+        <b class="border"><%= "VS #{room.room_name}" %></b>
+      </div>
+    <% end %>
+    <% num += 1 %>
+    <% if num > 2 %>
+      <% break %>
+    <% end %>
+  <% end %>
+<% end %>

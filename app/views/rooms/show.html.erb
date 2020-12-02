@@ -1,0 +1,12 @@
+<div class="chat_room">
+  <div class="chat_main">
+    <span class="chat_name"><%= "VS #{@room.room_name}" %></span><br>
+    第<%= @room.id %>節
+    <%= @room.match_day.strftime('%m/%d') %>
+    (<%= ["日", "月", "火", "水", "木", "金", "土"][@room.match_day.wday] %>)
+    <%= @room.match_time.in_time_zone("UTC").strftime('%H:%M') %>〜 
+  </div>
+  <div class="chat_content">
+    メッセージ
+  </div>
+</div>

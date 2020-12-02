@@ -1,0 +1,50 @@
+.room_title {
+  text-align: center;
+  font-size: 35px;
+  margin-top: 30px;
+}
+
+
+.room_list {
+  background-color: white;
+  font-size: 30px;
+  text-align: center;
+  border: 2px solid blue;
+  margin: 50px 250px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: black;
+}
+
+.room_link {
+  text-decoration: none;
+}
+
+.room_list:hover {
+  background-color: darkblue;
+  color: white;
+}
+
+.room_list:hover .border {
+  border-bottom: 4px solid white;
+}
+
+.border {
+  border-bottom: 4px solid blue;
+}
+
+
+.chat_main {
+  text-align: center;
+  border-bottom: 10px solid;
+  font-size: 20px;
+  background-color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.chat_name {
+  font-size: 35px;
+  font-weight: bold;
+}
+
