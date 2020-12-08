@@ -4,9 +4,31 @@
     第<%= @room.id %>節
     <%= @room.match_day.strftime('%m/%d') %>
     (<%= ["日", "月", "火", "水", "木", "金", "土"][@room.match_day.wday] %>)
-    <%= @room.match_time.in_time_zone("UTC").strftime('%H:%M') %>〜 
+    <%= @room.match_time.in_time_zone.strftime('%H:%M') %>〜 
+  </div>
+  <div class="flow_in" id="scroll">
+    <div id='messages'>
+      <% @messages.each do |message| %>
+        <div class="post">
+          <div class="top-post">
+            <div class="post-name">
+              <div class="name_in"><%= message.user.nickname %></div>
+            </div>
+            <div class="post-content">
+              <%= message.content %>
+            </div>
+            <div class="post-date">
+              <%= message.created_at.to_s(:datetimes_jp) %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
   <div class="chat_content">
-    メッセージ
+    <%= form_with model: [@room, @message], class: 'form', local: true do |form| %>
+      <%= form.text_area :content , rows: "2", id: "content" %>
+      <%= form.submit '送信' , id: "submit" %>
+    <% end %>
   </div>
 </div>

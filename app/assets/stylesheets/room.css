@@ -10,14 +10,15 @@
   font-size: 30px;
   text-align: center;
   border: 2px solid blue;
-  margin: 50px 250px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  margin: 30px 250px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   color: black;
 }
 
 .room_link {
   text-decoration: none;
+  display: block;
 }
 
 .room_list:hover {
@@ -36,7 +37,7 @@
 
 .chat_main {
   text-align: center;
-  border-bottom: 10px solid;
+  border: 10px solid;
   font-size: 20px;
   background-color: white;
   padding-top: 15px;
