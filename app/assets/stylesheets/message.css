@@ -1,0 +1,75 @@
+.post-content {
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-left: 15px;
+  position: relative;
+}
+
+.chat_main {
+  background-color: gainsboro;
+}
+
+.post-content:before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: -25px;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-right: 15px solid white;
+  z-index: 0;
+}
+
+.top-post {
+  display: flex;
+  text-align: center;
+}
+
+.post {
+  margin: 15px 20px;
+}
+
+.post-date {
+  margin-left: 5px;
+  font-size: 14px;
+  padding-top:20px;
+  color: dimgray;
+}
+
+.name_in {
+  padding: 8px 10px;
+  font-weight: bold;
+}
+
+#content {
+  margin-top: 10px;
+  width: 50%;
+  border-radius: 4px;
+  resize: none;
+}
+
+.chat_content {
+  margin-left: -100px;
+  margin-bottom: 10px;
+  text-align: center;
+  position: relative;
+}
+
+.flow_in {
+  overflow: scroll;
+  height: calc(100vh - 340px);
+  border-bottom: 10px solid black;
+  border-right: 10px solid black;
+  border-left: 10px solid black;
+  background-color: skyblue;
+}
+
+#submit {
+  height: 40px;
+  width: 80px;
+  margin-left: 15px;
+  position: absolute;
+  top: 10px;
+  font-size: 16px;
+}
