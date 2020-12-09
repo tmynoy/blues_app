@@ -1,9 +1,9 @@
 # Blues App
-このツールはチェルシーファン同士で交流することができます。
+このツールはチェルシーファン同士で交流することができます。<br>
 みんなでチェルシーを応援しよう！！
 
 # Description
-選手の情報や評価を閲覧できます。
+選手の情報や評価を閲覧できます。<br>
 そして、各試合ごとのチャットルームで他ユーザーとトークができます。
 
 # URL
@@ -11,19 +11,25 @@ https://blues-app.herokuapp.com/
 
 # 実装機能
 ## ユーザー機能
-・新規登録機能
-・ログイン・ログアウト機能
+<ul>
+  <li>新規登録機能</li>
+  <li>ログイン・ログアウト機能</li>
+</ul>
 
 ## 選手情報機能
-・全選手一覧
-・各選手ページにて詳細を表示
-・選手に対する評価ができる
-・評価後にグラフで平均評価が見れる
-・各選手ごとに対するコメント機能の搭載
+<ul>
+  <li>全選手一覧</li>
+  <li>各選手ページにて詳細を表示</li>
+  <li>選手に対する評価ができる</li>
+  <li>評価後にグラフで平均評価が見れる</li>
+  <li>各選手ごとに対するコメント機能の搭載</li>
+</ul>
 
 ## チャットルーム機能
-・直近3試合のチャットルームに入室できる
-・リアルタイムチャット機能を搭載
+<ul>
+  <li>直近3試合のチャットルームに入室できる</li>
+  <li>リアルタイムチャット機能を搭載</li>
+</ul>
 
 # テーブル設計
 ## users テーブル
@@ -78,12 +84,12 @@ https://blues-app.herokuapp.com/
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
 | total_id           | integer    | null: false                    |
-| offence_id         | integer    | null: false,                   |
-| deffence_id        | integer    | null: false,                   |
-| pass_id            | integer    | null: false,                   |
-| dribble_id         | integer    | null: false,                   |
-| physical_id        | integer    | null: false,                   |
-| pace_id            | integer    | null: false,                   |
+| offence_id         | integer    | null: false                    |
+| deffence_id        | integer    | null: false                    |
+| pass_id            | integer    | null: false                    |
+| dribble_id         | integer    | null: false                    |
+| physical_id        | integer    | null: false                    |
+| pace_id            | integer    | null: false                    |
 | member             | references | null: false, foreign_key: true |
 | user               | references | null: false, foreign_key: true |
 
