@@ -3,7 +3,6 @@
 みんなでチェルシーを応援しよう！！
 
 # Description
-This tool can browse information and evaluations of players.And it can talk with the fans in the chat room for each match.
 選手の情報や評価を閲覧できます。
 そして、各試合ごとのチャットルームで他ユーザーとトークができます。
 
