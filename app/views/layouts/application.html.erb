@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ChelseaApp</title>
+    <title>BluesApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -20,7 +20,7 @@
         <div class="header__bar row">
           <div class="logo_name">
             <%= image_tag 'logo.png', :size => '50x50' %>
-            <h1 class="grid-6"><a href="/">CHELSEA F.C app</a></h1>
+            <h1 class="grid-6"><a href="/">Blues app</a></h1>
           </div>
           <% if user_signed_in? %>
             <div class="user_nav grid-6">
@@ -46,7 +46,7 @@
       <%= yield %>
       <footer>
         <p>
-          Copyright Chelsea_app 2020.
+          Copyright blues_app 2020.
         </p>
       </footer>
     </div>
